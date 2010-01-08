@@ -42,13 +42,8 @@ class UrlTest < Test::Unit::TestCase
     assert_equal "http://news.ycombinator.com/", last_request.url
   end
   
-  def test_key_should_redirect_to_default_host_if_url_key_does_not_exist_or_empty
+  def test_key_should_redirect_to_default_host_if_url_key_does_not_exist
     # On local machines, 'last_request.url' uses Sinatra's default '0.0.0.0' as the host.
-    get '/'
-    assert last_response.redirect?
-    follow_redirect!
-    assert_equal "http://0.0.0.0/", last_request.url
-    
     get '/abcde'
     assert last_response.redirect?
     follow_redirect!

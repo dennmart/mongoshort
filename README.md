@@ -55,7 +55,7 @@ To generate a shortened URL, the `/new` action can be accessed via a POST reques
     Connection: keep-alive
     Server: thin 1.2.5 codename This Is Not A Web Server
 
-    {"short_url":"http://0.0.0.0:4567/a3ca1","full_url":"http://github.com"
+    {"short_url":"http://0.0.0.0:4567/a3ca1","full_url":"http://github.com"}
 
 You can then serve the value of the `short_url` key to use for redirection. The 'key' at the end of the URL is MongoShort's second action. Whenever the user visits the site where you're hosting MongoShort, it will look at the key, search for it in the MongoDB database, and redirect the user to the full URL if it exists.
 

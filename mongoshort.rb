@@ -49,6 +49,20 @@ helpers do
   end
 end
 
+get '/' do
+  # You can set up an index page (under the /public directory).
+  "MongoShort"
+end
+
+get '/:url' do
+  url = URL.find_by_url_key(params[:url])
+  if url.nil?
+    raise Sinatra::NotFound
+  else
+    redirect url.full_url
+  end
+end
+
 post '/new' do
   protected!
   content_type :json
@@ -60,15 +74,6 @@ post '/new' do
   
   url = URL.find_or_create(params[:url])
   return url.to_json
-end
-
-get '/:url' do
-  url = URL.find_by_url_key(params[:url])
-  if url.nil?
-    raise Sinatra::NotFound
-  else
-    redirect url.full_url
-  end
 end
 
 not_found do

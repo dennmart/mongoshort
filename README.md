@@ -38,7 +38,7 @@ If you want to test MongoShort on a publicly available site, I highly recommend 
 Finally, how do I get a shortened URL?
 ======================================
 
-First, make sure you have MongoDB running. Once MongoDB is properly running on a local development machine, you can start the application directly, which will launch the application running on Thin, Mongrel or WEBrick (depending on what you have installed):
+First, make sure you have MongoDB running. If your database needs authentication, make sure to set the environment variables `mongodb_user` and `mongodb_pass`. Once MongoDB is properly running on a local development machine, you can start the application directly, which will launch the application running on Thin, Mongrel or WEBrick (depending on what you have installed):
 
     ruby mongoshort.rb
 

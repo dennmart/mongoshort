@@ -21,7 +21,7 @@ configure :production do
   MongoMapper.database = 'urls'
   
   # Only necessary if your database needs authentication (strongly recommended in production).
-  # MongoMapper.database.authenticate('username', 'password')
+  # MongoMapper.database.authenticate(ENV['mongodb_user'], ENV['mongodb_pass'])
 end
 
 helpers do

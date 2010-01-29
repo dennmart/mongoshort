@@ -60,6 +60,8 @@ get '/:url' do
   if url.nil?
     raise Sinatra::NotFound
   else
+    url.last_accessed = Time.now
+    url.save
     redirect url.full_url
   end
 end

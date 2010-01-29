@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'mongoshort.rb')
 require 'test/unit'
 require 'rack/test'
+require 'timecop'
 
 set :environment, :test
 
@@ -40,6 +41,14 @@ class UrlTest < Test::Unit::TestCase
     assert last_response.redirect?
     follow_redirect!
     assert_equal "http://news.ycombinator.com/", last_request.url
+  end
+  
+  def test_key_should_update_the_last_access_date
+    Timecop.freeze do
+      get '/83802'
+      url = URL.find_by_url_key('83802')
+      assert_equal Time.now, url.last_accessed
+    end
   end
   
   def test_key_should_redirect_to_default_host_if_url_key_does_not_exist

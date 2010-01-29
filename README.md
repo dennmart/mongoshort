@@ -25,9 +25,10 @@ Also, you need to have the following Ruby gems installed:
  * [Sinatra](http://www.sinatrarb.com/)
  * [MongoMapper](http://github.com/jnunemaker/mongomapper)
 
-If you want to run the tests, you'll need an additional Ruby gem:
+If you want to run the tests, you'll need some additional Ruby gems:
 
  * [Rack::Test](http://github.com/brynary/rack-test)
+ * [Timecop](http://github.com/jtrupiano/timecop)
 
 MongoShort uses Ruby's [Test::Unit](http://ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html). To run the tests, make sure MongoDB is running, and execute the following Rake task:
 

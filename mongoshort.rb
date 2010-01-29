@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'mongo_mapper'
+require 'uri'
 require 'digest/md5'
 require 'models/url'
 

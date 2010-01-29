@@ -9,17 +9,17 @@ require 'models/url'
 CREDENTIALS = ['mongoshort', 'mongoshort']
 
 configure :development do
-  MongoMapper.database = 'urls_dev'
+  MongoMapper.database = 'mongoshort_dev'
 end
 
 configure :test do
-  MongoMapper.database = 'urls_test'
+  MongoMapper.database = 'mongoshort_test'
 end
 
 configure :production do
   # If using a separate database (like MongoHQ - http://www.mongohq.com/), specify the connection here.
   # MongoMapper.connection = Mongo::Connection.new('mongo.host.com', 27017)
-  MongoMapper.database = 'urls'
+  MongoMapper.database = 'mongoshort'
   
   # Only necessary if your database needs authentication (strongly recommended in production).
   # MongoMapper.database.authenticate(ENV['mongodb_user'], ENV['mongodb_pass'])

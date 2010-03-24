@@ -9,15 +9,18 @@ require 'models/url'
 CREDENTIALS = ['mongoshort', 'mongoshort']
 
 configure :development do
+  set :host, 'localhost'
   MongoMapper.database = 'mongoshort_dev'
 end
 
 configure :test do
+  set :host, 'localhost'
   MongoMapper.database = 'mongoshort_test'
 end
 
 configure :production do
-  # If using a separate database (like MongoHQ - http://www.mongohq.com/), specify the connection here.
+  set :host, 'localhost'
+  # If using a database outside of where MongoShort is wunning (like MongoHQ - http://www.mongohq.com/), specify the connection here.
   # MongoMapper.connection = Mongo::Connection.new('mongo.host.com', 27017)
   MongoMapper.database = 'mongoshort'
   

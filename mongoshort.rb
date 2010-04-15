@@ -9,18 +9,15 @@ require 'models/url'
 CREDENTIALS = ['mongoshort', 'mongoshort']
 
 configure :development do
-  set :host, 'localhost'
   MongoMapper.database = 'mongoshort_dev'
 end
 
 configure :test do
-  set :host, 'localhost'
   MongoMapper.database = 'mongoshort_test'
 end
 
 configure :production do
-  set :host, 'localhost'
-  # If using a database outside of where MongoShort is wunning (like MongoHQ - http://www.mongohq.com/), specify the connection here.
+  # If using a database outside of where MongoShort is running (like MongoHQ - http://www.mongohq.com/), specify the connection here.
   # MongoMapper.connection = Mongo::Connection.new('mongo.host.com', 27017)
   MongoMapper.database = 'mongoshort'
   
@@ -84,5 +81,5 @@ end
 
 not_found do
   # Change this URL to wherever you want to be redirected if a non-existing URL key or an invalid action is called.
-  redirect "http://#{Sinatra::Application.host}/"
+  redirect "http://#{Sinatra::Application.bind}/"
 end

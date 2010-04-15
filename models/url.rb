@@ -26,9 +26,9 @@ class URL
   def short_url
     # Note that if running locally, 'Sinatra::Application.host' will return '0.0.0.0'.
     if Sinatra::Application.port == 80
-      "http://#{Sinatra::Application.host}/#{self.url_key}"
+      "http://#{Sinatra::Application.bind}/#{self.url_key}"
     else
-      "http://#{Sinatra::Application.host}:#{Sinatra::Application.port}/#{self.url_key}"
+      "http://#{Sinatra::Application.bind}:#{Sinatra::Application.port}/#{self.url_key}"
     end
   end
 end

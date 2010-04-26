@@ -4,6 +4,7 @@ class URL
   key :url_key, String, :required => true
   key :full_url, String, :required => true
   key :last_accessed, Time
+  key :times_viewed, Integer, :default => 0
   
   # Tip for URL validation taken from http://mbleigh.com/2009/02/18/quick-tip-rails-url-validation.html
   validates_format_of :full_url, :with => URI::regexp(%w(http https))

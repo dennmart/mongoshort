@@ -51,6 +51,14 @@ class UrlTest < Test::Unit::TestCase
     end
   end
   
+  def test_key_should_increment_times_viewed
+    url = URL.find_by_url_key('83802')
+    assert_equal url.times_viewed, 0
+    get '/83802'
+    url.reload
+    assert_equal url.times_viewed, 1
+  end
+  
   def test_key_should_redirect_to_default_host_if_url_key_does_not_exist
     get '/abcde'
     assert last_response.redirect?

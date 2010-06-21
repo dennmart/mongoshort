@@ -42,6 +42,11 @@ class UrlTest < Test::Unit::TestCase
     follow_redirect!
     assert_equal "http://news.ycombinator.com/", last_request.url
   end
+
+  def test_full_url_redirect_should_be_301
+    get '/612c1'
+    assert_equal 301, last_response.status
+  end
   
   def test_key_should_update_the_last_access_date
     Timecop.freeze do

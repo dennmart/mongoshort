@@ -63,7 +63,7 @@ get '/:url' do
     url.last_accessed = Time.now
     url.times_viewed += 1
     url.save
-    redirect url.full_url
+    redirect url.full_url, 301
   end
 end
 

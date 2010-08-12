@@ -1,7 +1,9 @@
-require File.join(File.dirname(__FILE__), '..', 'mongoshort.rb')
+require 'rubygems'
+require 'bundler'
+Bundler.setup
+Bundler.require(:default, :test)
+require 'mongoshort'
 require 'test/unit'
-require 'rack/test'
-require 'timecop'
 
 set :environment, :test
 
@@ -23,7 +25,7 @@ class UrlTest < Test::Unit::TestCase
   end
   
   def set_authorization!
-    authorize  'mongoshort', 'mongoshort'
+    authorize 'mongoshort', 'mongoshort'
   end
   
   def test_key_should_redirect_to_full_url_if_url_key_exists

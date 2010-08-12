@@ -1,0 +1,35 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (2.3.8)
+    bson (1.0.4)
+    bson_ext (1.0.4)
+    jnunemaker-validatable (1.8.4)
+      activesupport (>= 2.3.4)
+    json (1.4.6)
+    mongo (1.0.7)
+      bson (>= 1.0.4)
+    mongo_mapper (0.8.3)
+      activesupport (>= 2.3.4)
+      jnunemaker-validatable (~> 1.8.4)
+      plucky (~> 0.3.3)
+    plucky (0.3.4)
+      mongo (~> 1.0.7)
+    rack (1.2.1)
+    rack-test (0.5.4)
+      rack (>= 1.0)
+    sinatra (1.0)
+      rack (>= 1.0)
+    timecop (0.3.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bson (= 1.0.4)
+  bson_ext (= 1.0.4)
+  json (= 1.4.6)
+  mongo_mapper (= 0.8.3)
+  rack-test (= 0.5.4)
+  sinatra (= 1.0)
+  timecop (= 0.3.5)

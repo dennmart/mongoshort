@@ -1,7 +1,7 @@
 require 'mongo_mapper'
 require 'uri'
 require 'digest/md5'
-require 'models/url'
+require './models/url'
 
 # If using Basic Authentication, please change the default passwords!
 CREDENTIALS = ['mongoshort', 'mongoshort']

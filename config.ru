@@ -3,5 +3,5 @@ require 'bundler'
 Bundler.setup
 
 require 'sinatra'
-require 'mongoshort'
+require './mongoshort'
 run Sinatra::Application

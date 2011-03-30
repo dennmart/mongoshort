@@ -18,13 +18,13 @@ MongoShort can generate shortened URLs by sending a POST request with a URL as a
 What do I need?
 ===============
 
-Currently, I've only used MongoShort on Ruby 1.8.7. I haven't tested yet on Ruby 1.9, but will soon.
+You need to have any recent version of Ruby installed. I've tested MongoShort using Ruby 1.9.2 (recommended) Ruby 1.8.7 and Ruby Enterprise Edition. If running on Linux or Mac OS X, make life easier on yourself and install [RVM](http://rvm.beginrescueend.com/).
 
-To run MongoShort, download and install [MongoDB](http://www.mongodb.org/) for your system. I've tested MongoShort on MongoDB 1.4.x and 1.6.x, so it should work properly for either version.
+To run MongoShort, download and install [MongoDB](http://www.mongodb.org/) for your system. I've tested MongoShort on MongoDB 1.6.x and 1.8.x, so it should work properly for either version.
 
-[Bundler](http://gembundler.com/) is now required to use MongoShort and setup all necessary RubyGems. I'm currently using the latest Release Candidate of Bundler (1.0.0.rc.5). To install the latest Release Candidate of Bundler, execute the following command:
+[Bundler](http://gembundler.com/) is now required to use MongoShort and setup all necessary RubyGems. To install, simply run the following command:
 
-    gem install bundler --pre
+    gem install bundler
 
 Once Bundler is installed, you can install the necessary RubyGems by executing the following command:
 

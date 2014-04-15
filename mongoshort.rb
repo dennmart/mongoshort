@@ -18,7 +18,7 @@ configure :production do
   # If using a database outside of where MongoShort is running (like MongoHQ - http://www.mongohq.com/), specify the connection here.
   # MongoMapper.connection = Mongo::Connection.new('mongo.host.com', 27017)
   MongoMapper.database = 'mongoshort'
-  
+
   # Only necessary if your database needs authentication (strongly recommended in production).
   # MongoMapper.database.authenticate(ENV['mongodb_user'], ENV['mongodb_pass'])
 end
@@ -33,7 +33,7 @@ helpers do
       response['WWW-Authenticate'] = %Q{Basic Realm="Mongoshort URL Shortener"}
       throw :halt, [401, 'Authorization Required']
     end
-  
+
     # Non-basic authentications will be returned as a bad request (400 error).
     unless auth.basic?
       throw :halt, [400, 'Bad Request']

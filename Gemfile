@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rake'
-gem "sinatra", "1.2.1"
-gem "bson", "1.2.4"
-gem "bson_ext", "1.2.4"
-gem "mongo_mapper", "0.8.6"
-gem "json", "1.5.1"
-gem "i18n", "0.5.0"
+gem 'sinatra', '~> 1.4'
+gem 'bson', '~> 1.10'
+gem 'bson_ext', '~> 1.10'
+gem 'mongo_mapper', '~> 0.12'
+gem 'json', '~> 1.8'
+gem 'i18n', '~> 0.6'
 
 group :test do
-  gem "rack-test", "0.5.7", :require => "rack/test"
-  gem "timecop", "0.3.5"
+  gem 'rack-test', '~> 0.6', require: 'rack/test'
+  gem 'timecop', '~> 0.7'
 end

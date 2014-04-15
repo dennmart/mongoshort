@@ -1,5 +1,6 @@
-source :rubygems
+source 'https://rubygems.org'
 
+gem 'rake'
 gem "sinatra", "1.2.1"
 gem "bson", "1.2.4"
 gem "bson_ext", "1.2.4"

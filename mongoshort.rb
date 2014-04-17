@@ -1,5 +1,3 @@
-require 'active_support'
-require 'active_support/deprecation'
 require 'mongo_mapper'
 require 'uri'
 require 'digest/md5'

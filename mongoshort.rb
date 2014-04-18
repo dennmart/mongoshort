@@ -3,8 +3,8 @@ require 'uri'
 require 'digest/md5'
 require './models/url'
 
-# If using Basic Authentication, please change the default passwords!
-CREDENTIALS = ['mongoshort', 'mongoshort']
+require 'dotenv'
+Dotenv.load
 
 configure :development do
   MongoMapper.database = 'mongoshort_dev'
@@ -40,7 +40,7 @@ helpers do
     end
 
     # The basic checks are okay - Check if the credentials match.
-    if auth.provided? && CREDENTIALS == auth.credentials
+    if auth.provided? && auth.credentials == [ENV['MONGOSHORT_USER'], ENV['MONGOSHORT_PASSWORD']]
       return true
     else
       throw :halt, [403, 'Forbidden']
